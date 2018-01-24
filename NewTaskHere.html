@@ -7852,12 +7852,12 @@ ToDo
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[hc.png]]</pre>
+# [[$:/plugins/HCHaase/NewTaskHere]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div author="Hans Christian Haase" core-version="5.1.13" created="20170130090318127" creator="HC Haase" description="New Task here button" list="readme" modified="20170201111310205" modifier="HC Haase" plugin-type="plugin" title="$:/plugins/HCHaase/NewTaskHere" type="application/json" version="1.0.1">
+<div author="Hans Christian Haase" core-version="5.1.13" created="20170130090318127" creator="HC Haase" description="New Task here button" list="readme" modified="20180124072030718" modifier="HC Haase" plugin-type="plugin" title="$:/plugins/HCHaase/NewTaskHere" type="application/json" version="1.0.4">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/HCHaase/NewTaskHere/Caption&quot;: {
@@ -7889,11 +7889,11 @@ ToDo
         },
         &quot;$:/plugins/HCHaase/NewTaskHere/new-task-here&quot;: {
             &quot;text&quot;: &quot;\\define taskButtonTags()\n[[$(currentTiddlerTag)$]] $(taskTags)$\n\\end\n\\define taskButton()\n&lt;$button tooltip={{$:/plugins/HCHaase/NewTaskHere/Hint}} aria-label={{$:/plugins/HCHaase/NewTaskHere/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;\n&lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot; title=\&quot;$(journalTitleTemplate)$\&quot; tags=&lt;&lt;taskButtonTags&gt;&gt;/&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]\&quot;&gt;\n{{$:/plugins/HCHaase/NewTaskHere/images/task}}\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]\&quot;&gt;\n&lt;span class=\&quot;tc-btn-text\&quot;&gt;&lt;$text text={{$:/plugins/HCHaase/NewTaskHere/Caption}}/&gt;&lt;/span&gt;\n&lt;/$list&gt;\n&lt;/$button&gt;\n\\end\n\n&lt;$set name=\&quot;journalTitleTemplate\&quot; value={{$:/plugins/HCHaase/NewTaskHere/new-task-here!!title_prefix}}&gt; \n&lt;$set name=\&quot;taskTags\&quot; value=task&gt;\n&lt;$set name=\&quot;currentTiddlerTag\&quot; value=&lt;&lt;currentTiddler&gt;&gt;&gt;\n&lt;&lt;taskButton&gt;&gt;\n&lt;/$set&gt;&lt;/$set&gt;&lt;/$set&gt;&quot;,
-            &quot;title_prefix&quot;: &quot;&quot;,
+            &quot;title_prefix&quot;: &quot;al&quot;,
             &quot;title&quot;: &quot;$:/plugins/HCHaase/NewTaskHere/new-task-here&quot;,
             &quot;tags&quot;: &quot;$:/tags/ViewToolbar&quot;,
             &quot;modifier&quot;: &quot;HC Haase&quot;,
-            &quot;modified&quot;: &quot;20170201104915193&quot;,
+            &quot;modified&quot;: &quot;20170419112646238&quot;,
             &quot;description&quot;: &quot;{{$:/plugins/HCHaase/NewTaskHere/Hint}}&quot;,
             &quot;creator&quot;: &quot;HC Haase&quot;,
             &quot;created&quot;: &quot;20170126103126426&quot;,
@@ -7921,11 +7921,21 @@ ToDo
         &quot;$:/plugins/HCHaase/NewTaskHere/readme&quot;: {
             &quot;created&quot;: &quot;20170130082652742&quot;,
             &quot;creator&quot;: &quot;HC Haase&quot;,
-            &quot;text&quot;: &quot;This plug-in adds three things\n\n # a new-Task-here button {{$:/plugins/HCHaase/NewTaskHere/images/task}} in the View toolbar. The button create a new tiddler tagged with the `current tiddler` and with `task`. \n    ## you can add a custom title (e.g. to use as prefix for new tiddlers) by filling the field `title_prefix` in the tiddler [[$:/plugins/HCHaase/NewTaskHere/new-task-here]].\n # It also ads a snippet to the edit toolbar, that inserts a checklist with outstanding and completed tasks in the tiddler being edited.\n # and it also add the tiddler `task` with the new task icon. If you already have a tiddler called task, you need to delete it (or you can copy the field `icon` to your old task tiddler).\n\nRemember you can edit the placement of the button by editing its place in the [[$:/tags/ViewToolbar]] tiddler field `list`.\n\n!! Use case\n\nIf you have a [[task lists|http://tiddlywiki.com/#TaskManagementExample]] somewhere to show tiddlers with the tag `task`. This button makes it fast to make new task related to the current tiddler.\n&quot;,
+            &quot;text&quot;: &quot;This plug-in adds four things\n\n # a new-Task-here button {{$:/plugins/HCHaase/NewTaskHere/images/task}} in the View toolbar. The button create a new tiddler tagged with the `current tiddler` and with `task`. \n    ## you can add a custom title (e.g. to use as prefix for new tiddlers) by filling the field `title_prefix` in the tiddler [[$:/plugins/HCHaase/NewTaskHere/new-task-here]].\n # It also ads a snippet to the edit toolbar, that inserts a checklist with outstanding and completed tasks, in the tiddler being edited.\n # A snippet as above, but local. This snippet only shows task (and completed task) that are tagged with the tiddler of that task list.\n # And it also add the tiddler `task` with the new task icon. If you already have a tiddler called task, you need to delete it (or you can copy the field `icon` to your old task tiddler).\n\nRemember you can edit the placement of the button by editing its place in the [[$:/tags/ViewToolbar]] tiddler field `list`.\n\n!! Use case\n\nIf you have a [[task lists|http://tiddlywiki.com/#TaskManagementExample]] somewhere to show tiddlers with the tag `task`. This button makes it fast to make new task related to the current tiddler.\n\nI use it to make a daily report of my work to do and done. Each day has there own tiddler with a task list as in the snippets, and I use the new-task-here button to quickly add my daily tasks.\n&quot;,
             &quot;title&quot;: &quot;$:/plugins/HCHaase/NewTaskHere/readme&quot;,
             &quot;tags&quot;: &quot;$:/plugins/HCHaase/NewTaskHere/new-task-here&quot;,
             &quot;modifier&quot;: &quot;HC Haase&quot;,
-            &quot;modified&quot;: &quot;20170201111158487&quot;
+            &quot;modified&quot;: &quot;20180124071759482&quot;
+        },
+        &quot;TextSnippet: Task check-list, Local&quot;: {
+            &quot;created&quot;: &quot;20170203091736169&quot;,
+            &quot;creator&quot;: &quot;HC Haase&quot;,
+            &quot;text&quot;: &quot;! Local task list\n\n!! Outstanding tasks\n\n&lt;$list filter=\&quot;[!has[draft.of]tag&lt;currentTiddler&gt;tag[task]!tag[done]sort[created]]\&quot;&gt;\n\n&lt;$checkbox tag=\&quot;done\&quot;&gt; &lt;$link to={{!!title}}&gt;&lt;$view field=\&quot;title\&quot;/&gt;&lt;/$link&gt;&lt;/$checkbox&gt;\n\n&lt;/$list&gt;\n\n!! Completed tasks\n\n&lt;$list filter=\&quot;[!has[draft.of]tag&lt;currentTiddler&gt;tag[task]tag[done]sort[created]]\&quot;&gt;\n\n&lt;$checkbox tag=\&quot;done\&quot;&gt; &lt;$link to={{!!title}}&gt;&lt;$view field=\&quot;title\&quot;/&gt;&lt;/$link&gt;&lt;/$checkbox&gt;\n\n&lt;/$list&gt;&quot;,
+            &quot;title&quot;: &quot;TextSnippet: Task check-list, Local&quot;,
+            &quot;tags&quot;: &quot;$:/tags/TextEditor/Snippet $:/plugins/HCHaase/NewTaskHere/new-task-here&quot;,
+            &quot;modifier&quot;: &quot;HC Haase&quot;,
+            &quot;modified&quot;: &quot;20170203092024953&quot;,
+            &quot;caption&quot;: &quot;Task check-list, Local&quot;
         }
     }
 }</pre>
@@ -7951,7 +7961,7 @@ ToDo
 <div created="20170201112752218" creator="HC Haase" modified="20170201114046642" modifier="HC Haase" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Plugins</pre>
 </div>
-<div created="20170201112906743" creator="HC Haase" modified="20170201112906743" modifier="HC Haase" title="$:/state/tab/sidebar--1835078512">
+<div created="20170201112906743" creator="HC Haase" modified="20180124072442865" modifier="HC Haase" title="$:/state/tab/sidebar--1835078512">
 <pre>$:/core/ui/SideBar/Tools</pre>
 </div>
 <div created="20170201113422489" creator="HC Haase" modified="20170201113425721" modifier="HC Haase" title="$:/state/tabs/controlpanel/toolbars-1345989671">
@@ -7960,7 +7970,7 @@ ToDo
 <div created="20170201112710976" creator="H" modified="20170201112713496" modifier="HC Haas" title="$:/status/UserName">
 <pre>HC Haase</pre>
 </div>
-<div list="$:/ControlPanel $:/plugins/HCHaase/NewTaskHere [[New Task Here]] $:/plugins/HCHaase/NewTaskHere/readme ToDo" title="$:/StoryList">
+<div list="$:/Import $:/ControlPanel [[New Task Here]] $:/plugins/HCHaase/NewTaskHere/readme ToDo" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
